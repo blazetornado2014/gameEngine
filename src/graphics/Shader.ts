@@ -112,8 +112,11 @@ uniform mat4 u_transform;
 out vec4 v_color;
 
 void main() {
+    // Apply transform matrix to position
+    vec4 transformedPos = u_transform * vec4(a_position, 0.0, 1.0);
+    
     // Convert from pixels to clip space
-    vec2 clipSpace = ((a_position / u_resolution) * 2.0) - 1.0;
+    vec2 clipSpace = ((transformedPos.xy / u_resolution) * 2.0) - 1.0;
     
     gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
     v_color = a_color;
