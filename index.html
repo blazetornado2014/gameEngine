@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Game Engine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        #gameCanvas {
+            border: 2px solid #333;
+            background: #000;
+            image-rendering: pixelated;
+        }
+        
+        #ui {
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        #promptInput {
+            background: #333;
+            border: 1px solid #555;
+            color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            width: 400px;
+            margin: 10px;
+        }
+        
+        #generateBtn {
+            background: #007acc;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        #generateBtn:hover {
+            background: #005a9e;
+        }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <h1>AI Game Engine</h1>
+        <input type="text" id="promptInput" placeholder="Describe your game: 'Make a platformer where gravity flips when you jump'" />
+        <button id="generateBtn">Generate Game</button>
+    </div>
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
