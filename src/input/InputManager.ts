@@ -9,7 +9,9 @@ export enum Key {
     ARROW_RIGHT = 'ArrowRight',
     SPACE = 'Space',
     ENTER = 'Enter',
-    ESCAPE = 'Escape'
+    ESCAPE = 'Escape',
+    R = 'KeyR',
+    P = 'KeyP'
 }
 
 export class InputManager {

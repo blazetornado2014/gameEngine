@@ -16,10 +16,30 @@
             min-height: 100vh;
         }
         
-        #gameCanvas {
+        #gameContainer {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        
+        #gameCanvas, #uiCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
             border: 2px solid #333;
-            background: #000;
             image-rendering: pixelated;
+        }
+        
+        #gameCanvas {
+            background: #000;
+            z-index: 1;
+        }
+        
+        #uiCanvas {
+            background: transparent;
+            z-index: 10;
+            pointer-events: none; /* Allow clicks to pass through to game */
         }
         
         #ui {
@@ -60,7 +80,10 @@
         <button id="generateBtn">Generate Game</button>
     </div>
     
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <canvas id="uiCanvas" width="800" height="600"></canvas>
+    </div>
     
     <script type="module" src="/src/main.ts"></script>
 </body>
