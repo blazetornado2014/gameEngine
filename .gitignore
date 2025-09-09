@@ -13,12 +13,19 @@ build/
 !webpack.config.js
 !rollup.config.js
 
-# Environment variables
+# Environment variables - NEVER commit API keys
 .env
 .env.local
+.env.development
 .env.development.local
+.env.test
 .env.test.local
+.env.production
 .env.production.local
+
+# Backup env files
+.env.backup
+.env.save
 
 # Editor/IDE files
 .vscode/
